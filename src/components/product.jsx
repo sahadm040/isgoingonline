@@ -62,7 +62,7 @@ const Product = () => {
           </div>
         ) : (
           <Container fluid>
-            <Row className="small-text">
+            <Row className="small-text p-2">
               <Col lg={2}></Col>
 
               <Col
@@ -70,12 +70,14 @@ const Product = () => {
                 md={4}
                 sm={6}
                 xs={12}
-                className="d-flex justify-content-center shadow p-4 my-2"
+                className="d-flex justify-content-center  p-4 my-2"
               >
                 <img
                   src={character?.image}
                   alt={character?.title}
-                  className="img-fluid"
+                  className="img-fluid border p-4"
+                  width={"80%"}
+                  height={"80%"}
                 />
               </Col>
               <Col

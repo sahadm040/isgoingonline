@@ -29,13 +29,15 @@ const postSlice = createSlice({
     [allList.rejected]: () => {
       console.log("allList rejected");
     },
-    [SingleView.pending]: () => {
+    [SingleView.pending]: (state) => {
       console.log("singleView pending");
+      state.loading = "true";
     },
     [SingleView.fulfilled]: (state, action) => {
       console.log("singleView fulfilled");
       state.productView = action.payload;
       console.log("action.payload", action.payload);
+      state.loading = "false";
     },
     [SingleView.rejected]: () => {
       console.log("singleView rejected");
