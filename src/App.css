@@ -1,6 +1,4 @@
 .App {
-  /* text-align: center; */
-  /* background-color: #282c34; */
   min-height: 100vh;
   /* display: flex; */
   /* flex-direction: column; */
@@ -23,21 +21,21 @@
   color: crimson;
 }
 
-
-
 footer {
-  background-color: #282c34;
+  background-color: #172337;
   color: #ffffff;
 
 }
 
 .small-text {
-  font-size: 18px;
+  font-size: 16px;
+
   @media (max-width: 768px) {
     font-size: 14px;
   }
 }
 
-a{
+a {
   text-decoration: none;
+  color: white;
 }

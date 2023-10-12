@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className=" bg-dark text-light text-center">
+    <footer className=" text-light ">
       <div className="container py-2">
         <div className="row">
           <div className="col-md-4">
@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <h4>Quick Links</h4>
+            <h4 className="text-secondary">Quick Links</h4>
             <ul className="list-unstyled small-text">
               <li>
                 <a href="/">Home</a>
@@ -47,7 +47,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-md-4 small-text">
-            <h4 id="contact">Contact Us</h4>
+            <h4 id="contact" className="text-secondary">
+              Contact Us
+            </h4>
             <address>
               <p>1234 Main Street</p>
               <p>City, State ZIP</p>
@@ -63,7 +65,7 @@ const Footer = () => {
 
         <div className=" d-flex justify-content-center">
           <Row>
-            <Col>
+            <Col lg={6} sm={6} xs={12}>
               <img
                 src={card_maestro_payment}
                 style={{ width: "50px", height: "50px", margin: "10px" }}
@@ -80,7 +82,7 @@ const Footer = () => {
                 alt="finance_logo_payment_worldpay"
               />
             </Col>
-            <Col>
+            <Col lg={6} sm={6} xs={12}>
               <img
                 src={finance_payment_paypal}
                 style={{ width: "50px", height: "50px", margin: "10px" }}
@@ -101,7 +103,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-secondary text-center py-1 small-text">
+      <div className="border-top border-white text-center py-1 small-text">
         <p>
           &copy; {new Date().getFullYear()} Your E-Commerce Company. All rights
           reserved.

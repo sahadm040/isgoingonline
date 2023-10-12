@@ -1,14 +1,10 @@
-// import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-// import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 function NavBar() {
-  // const cart = useSelector((state) => state.cart);
-
   return (
     <div style={{ position: "sticky", top: "0", zIndex: "10" }}>
       {["md"].map((expand) => (
@@ -64,30 +60,14 @@ function NavBar() {
                   </NavDropdown>
                   <Nav.Link href="/cart">
                     <div className="d-flex align-items-center">
-                      {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
                       Cart
                       <i
                         className="fa fa-shopping-cart mx-1"
                         aria-hidden="true"
                       ></i>
-                      {/* <li className="nav-item">
-                        <Link to="/cart" className="nav-link">
-                          <i className="fas fa-shopping-cart"></i>
-                          Cart ({cart.length})
-                        </Link>
-                      </li> */}
                     </div>
                   </Nav.Link>
                 </Nav>
-                {/* <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form> */}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

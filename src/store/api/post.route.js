@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { axiosApi } from "../axiosInstance/axiosInstance";
 
-// ----------------------------------- all characters api------------------------------------/
+// ----------------------------------- all products api------------------------------------/
 
 export const allList = createAsyncThunk("products", async () => {
   const response = await axiosApi.get("products");
@@ -9,7 +9,7 @@ export const allList = createAsyncThunk("products", async () => {
   return response.data;
 });
 
-// ----------------------------------- single character api------------------------------------/
+// ----------------------------------- single product api------------------------------------/
 
 export const SingleView = createAsyncThunk("productSingleView", async (id) => {
   const response = await axiosApi.get(`products/${id}`);
