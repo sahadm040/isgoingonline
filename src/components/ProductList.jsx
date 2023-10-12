@@ -44,13 +44,13 @@ const ProductList = () => {
                     <Card
                       border="secondary"
                       style={{ width: "18rem", minHeight: "250px" }}
-                      className="small-text m-2 text-center d-flex align-items-center"
+                      className="small-text m-4 text-center d-flex align-items-center shadow "
                     >
                       <Card.Img
-                        className="px-4 mt-4 py-2 shadow"
+                        className="px-4 mt-4 py-4 border "
                         variant="top"
                         src={item?.image}
-                        style={{ height: "100px", width: "50%" }}
+                        style={{ height: "150px", width: "50%" }}
                       />
                       <Card.Body>
                         <Card.Title>
