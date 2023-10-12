@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row, Spinner } from "react-bootstrap";
+import {
+  Badge,
+  Button,
+  Card,
+  Col,
+  Container,
+  Row,
+  Spinner,
+} from "react-bootstrap";
 import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { allList } from "../store/api/post.route";
@@ -40,50 +48,41 @@ const ProductList = () => {
                   xs={12}
                   className="d-flex justify-content-center"
                 >
-                  <Link to={`/product/${item.id}`}>
-                    <Card
-                      border="secondary"
-                      className="small-text m-4 text-center d-flex align-items-center shadow "
-                    >
-                      <Card.Img
-                        className="px-4 mt-4 py-4 border "
-                        variant="top"
-                        src={item?.image}
-                        style={{ height: "150px", width: "50%" }}
-                      />
-                      <Card.Body>
-                        <Card.Title>
-                          {item?.title?.split(" ").slice(0, 3).join(" ")}
-                        </Card.Title>
-                        <Card.Text className="m-0">
-                          Price : {item?.price}
-                        </Card.Text>
-                        <div className="d-flex justify-content-center">
-                          <Row>
-                            <Col md={6} className="p-2">
-                              <Button variant="primary">
-                                Add to
-                                <i
-                                  className="fa fa-shopping-cart mx-1"
-                                  aria-hidden="true"
-                                ></i>
-                              </Button>
-                            </Col>
-                            <Col md={6} className="p-2">
-                              {" "}
-                              <Button variant="primary">
-                                Add to
-                                <i
-                                  className="fa fa-shopping-cart mx-1"
-                                  aria-hidden="true"
-                                ></i>
-                              </Button>
-                            </Col>
-                          </Row>
-                        </div>
-                      </Card.Body>
-                    </Card>
-                  </Link>
+                  <Card
+                    border="secondary"
+                    className="small-text m-4 text-center d-flex align-items-center shadow "
+                  >
+                    <Card.Img
+                      className="px-4 mt-4 py-4 border "
+                      variant="top"
+                      src={item?.image}
+                      style={{ height: "150px", width: "50%" }}
+                    />
+                    <Card.Body>
+                      <Card.Title>
+                        {item?.title?.split(" ").slice(0, 3).join(" ")}
+                      </Card.Title>
+
+                      <div className="d-flex justify-content-end">
+                        <p>
+                          <Badge bg="success">
+                            {item?.rating?.rate}{" "}
+                            <span aria-label="star" role="img">
+                              ★
+                            </span>
+                          </Badge>
+                        </p>
+                        <p className="mx-3">Count : {item?.rating?.count}</p>
+                      </div>
+                      <Card.Text>
+                        {" "}
+                        <strong>Price : $ {item?.price}</strong>
+                      </Card.Text>
+                      <Link to={`/product/${item.id}`}>
+                        <Button variant="primary">view product</Button>
+                      </Link>
+                    </Card.Body>
+                  </Card>
                 </Col>
               ))}
             </Row>

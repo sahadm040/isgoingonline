@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { SingleView } from "../store/api/post.route";
 import Layout from "./Layout";
-import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Badge, Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import { addToCart } from "../store/slices/postSlice";
 
 const Product = () => {
@@ -24,29 +24,6 @@ const Product = () => {
   useEffect(() => {
     setCharacter(productView);
   }, [productView]);
-
-  const stars = [];
-  const rating = character?.rating?.rate;
-
-  // Round the rating to the nearest half
-  const roundedRating = Math.round(rating * 2) / 2;
-
-  // Create an array of 5 stars
-  for (let i = 1; i <= 5; i++) {
-    if (i <= roundedRating) {
-      stars.push(
-        <span key={i} className="star">
-          &#9733;
-        </span>
-      ); // Insert a filled star
-    } else {
-      stars.push(
-        <span key={i} className="star">
-          &#9734;
-        </span>
-      ); // Insert an outline star
-    }
-  }
   const handleAddToCart = () => {
     dispatch(addToCart(character)); // Dispatch the addToCart action with the product details
   };
@@ -87,12 +64,25 @@ const Product = () => {
                 <h2>{character?.title}</h2>
                 <p>{character?.description}</p>
                 <p>Category : {character?.category}</p>
-                <p>Price : ${character?.price}</p>
-                <div className="d-flex">
-                  <p>rating : {stars}</p>
+                <strong>Price : ${character?.price}</strong>
+                <div className="d-flex justify-content-end">
+                  <p>
+                    <Badge bg="success">
+                      {character?.rating?.rate}{" "}
+                      <span aria-label="star" role="img">
+                        ★
+                      </span>
+                    </Badge>
+                  </p>
                   <p className="mx-3">Count : {character?.rating?.count}</p>
                 </div>
-                <Button onClick={handleAddToCart}>Add to Cart</Button>
+                <Button onClick={handleAddToCart}>
+                  Add to Cart
+                  <i
+                    className="fa fa-shopping-cart mx-1"
+                    aria-hidden="true"
+                  ></i>
+                </Button>
               </Col>
             </Row>
           </Container>
