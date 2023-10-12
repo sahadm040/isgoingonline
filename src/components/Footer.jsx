@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col-md-4">
-            <div className="my-1 p-1 d-flex flex-column align-items-center justify-content-between">
+            <div className="my-1 p-1 d-flex flex-column justify-content-between">
               <div className="icon">
                 <a href="/">
                   <h5>
