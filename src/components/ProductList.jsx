@@ -50,6 +50,7 @@ const ProductList = () => {
                 >
                   <Card
                     border="secondary"
+                    style={{ width: "18rem" }}
                     className="small-text m-4 text-center d-flex align-items-center shadow "
                   >
                     <Card.Img
