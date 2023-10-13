@@ -70,7 +70,7 @@ const ProductList = () => {
                         {item?.title?.split(" ").slice(0, 3).join(" ")}
                       </Card.Title>
 
-                      <div className="d-flex justify-content-end">
+                      <div className="d-flex justify-content-center">
                         <p>
                           <Badge bg="success">
                             {item?.rating?.rate}{" "}
