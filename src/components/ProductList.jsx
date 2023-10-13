@@ -86,7 +86,7 @@ const ProductList = () => {
                         <strong>Price : $ {item?.price}</strong>
                       </Card.Text>
                       <Link to={`/product/${item.id}`}>
-                        <Button variant="primary">view product</Button>
+                        <Button variant="success">view product</Button>
                       </Link>
                       <Button
                         variant="primary"
