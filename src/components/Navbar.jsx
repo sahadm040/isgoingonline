@@ -1,19 +1,22 @@
+import { Badge } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { useSelector } from "react-redux";
 
 function NavBar() {
+  const count = useSelector((state) => state.post.value);
   return (
     <div style={{ position: "sticky", top: "0", zIndex: "10" }}>
       {["md"].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary">
           <Container fluid>
             <Navbar.Brand href="/">
-              <div className="my-1 p-1 d-flex flex-column align-items-center justify-content-between">
-                <div className="icon ">
-                  <h5>
+              <div className="mx-3 p-1 d-flex flex-column align-items-center justify-content-between">
+                <div className="icon">
+                  <h5 className="mt-2">
                     SH
                     <span>opne</span>ST
                   </h5>
@@ -61,10 +64,20 @@ function NavBar() {
                   <Nav.Link href="/cart">
                     <div className="d-flex align-items-center">
                       Cart
-                      <i
-                        className="fa fa-shopping-cart mx-1"
-                        aria-hidden="true"
-                      ></i>
+                      <div className="position-relative">
+                        <i
+                          className="fa fa-shopping-cart p-2"
+                          aria-hidden="true"
+                        ></i>
+                        <Badge
+                          size="sm"
+                          pill
+                          bg="danger"
+                          className="small-text position-absolute top-0 start-100 translate-middle"
+                        >
+                          {count}
+                        </Badge>
+                      </div>
                     </div>
                   </Nav.Link>
                 </Nav>

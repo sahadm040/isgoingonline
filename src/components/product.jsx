@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { SingleView } from "../store/api/post.route";
 import Layout from "./Layout";
 import { Badge, Button, Col, Container, Row, Spinner } from "react-bootstrap";
-import { addToCart } from "../store/slices/postSlice";
+import { addToCart, increment } from "../store/slices/postSlice";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -24,8 +24,10 @@ const Product = () => {
   useEffect(() => {
     setCharacter(productView);
   }, [productView]);
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.preventDefault();
     dispatch(addToCart(character)); // Dispatch the addToCart action with the product details
+    dispatch(increment());
   };
   return (
     <div>

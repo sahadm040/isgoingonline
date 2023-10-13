@@ -6,6 +6,7 @@ const initialState = {
   productView: {},
   loading: "false",
   cart: [],
+  value: 0,
 };
 const postSlice = createSlice({
   name: "list",
@@ -14,6 +15,10 @@ const postSlice = createSlice({
     addToCart: (state, action) => {
       state.cart.push(action.payload);
       console.log("cart", state.cart);
+    },
+    increment: (state) => {
+      state.value += 1;
+      console.log("value", state.value);
     },
   },
   extraReducers: {
@@ -45,5 +50,5 @@ const postSlice = createSlice({
   },
 });
 
-export const { addToCart } = postSlice.actions;
+export const { addToCart, increment } = postSlice.actions;
 export default postSlice.reducer;
